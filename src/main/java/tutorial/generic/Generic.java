@@ -1,5 +1,7 @@
 package tutorial.generic;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import cpw.mods.fml.common.Mod;
@@ -21,6 +23,9 @@ public class Generic {
 	
 	public static Item genericItem;
 	public static Item genericIngot;
+	
+	public static Block genericDirt;
+	public static Block genericOre;
 
 	// The instance of your mod that Forge uses.
 	@Instance(value = "GenericModID")
@@ -33,16 +38,29 @@ public class Generic {
 	@EventHandler // used in 1.6.2
 	//@PreInit    // used in 1.5.2
 	public void preInit(FMLPreInitializationEvent event) {
+		
         genericItem = new GenericItem();
         genericIngot = new GenericItem()
                         .setMaxStackSize(16)
                         .setUnlocalizedName("genericIngot")
                         .setTextureName("jdmmod:genericIngot");
 
+    	
+    	genericDirt = new GenericBlock(Material.ground)
+    		.setHardness(0.5F)
+    		.setStepSound(Block.soundTypeGravel)
+    		.setBlockName("genericDirt")
+    		.setCreativeTab(CreativeTabs.tabBlock);
+    	
+    	genericOre = new GenericOre(Material.rock);
+
         // The second parameter is an unique registry identifier (not the displayed name)
         // Please don't use genericItem.getUnlocalizedName(), or you will make Lex sad
         GameRegistry.registerItem(genericItem, "genericItem");
         GameRegistry.registerItem(genericIngot, "genericIngot");
+        
+        GameRegistry.registerBlock(genericDirt, "genericDirt");
+        GameRegistry.registerBlock(genericOre, "genericOre");
 	}
 	
 	@EventHandler // used in 1.6.2

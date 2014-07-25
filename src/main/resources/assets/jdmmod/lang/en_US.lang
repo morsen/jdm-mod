@@ -1,2 +1,4 @@
 item.genericItem.name=Generic Item
 item.genericIngot.name=Generic Ingot
+tile.genericDirt.name=Generic Dirt
+tile.genericOre.name=Generic Ore
