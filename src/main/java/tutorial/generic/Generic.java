@@ -15,7 +15,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 //import cpw.mods.fml.common.network.NetworkMod; // not used in 1.7
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid="GenericModID", name="jdm-mod", version="0.0.1")
+@Mod(modid="GenericModID", name="jdmmod", version="0.0.1")
 //@NetworkMod(clientSideRequired=true) // not used in 1.7
 public class Generic {
 	
@@ -36,7 +36,8 @@ public class Generic {
         genericItem = new GenericItem();
         genericIngot = new GenericItem()
                         .setMaxStackSize(16)
-                        .setUnlocalizedName("genericIngot");
+                        .setUnlocalizedName("genericIngot")
+                        .setTextureName("jdmmod:genericIngot");
 
         // The second parameter is an unique registry identifier (not the displayed name)
         // Please don't use genericItem.getUnlocalizedName(), or you will make Lex sad

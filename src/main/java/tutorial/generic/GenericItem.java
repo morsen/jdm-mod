@@ -9,5 +9,6 @@ public class GenericItem extends Item {
 		setMaxStackSize(64);
 		setCreativeTab(CreativeTabs.tabMisc);
 		setUnlocalizedName("genericItem");
+		setTextureName("jdmmod:genericItem");
 	}
 }
